@@ -302,7 +302,6 @@ class AxiStreamBase(Reset):
             if hasattr(self.bus, sig):
                 if self._init_x and sig not in ("tvalid", "tready"):
                     v = getattr(self.bus, sig).value
-                    v.binstr = 'x'*len(v)
                     getattr(self.bus, sig).setimmediatevalue(v)
 
         if hasattr(self.bus, "tkeep"):
