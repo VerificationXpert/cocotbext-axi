@@ -120,7 +120,6 @@ class StreamBase(Reset):
                     assert len(getattr(self.bus, sig)) == self._signal_widths[sig]
                 if self._init_x and sig not in (self._valid_signal, self._ready_signal):
                     v = getattr(self.bus, sig).value
-                    v.binstr = 'x'*len(v)
                     getattr(self.bus, sig).setimmediatevalue(v)
 
         self._run_cr = None
